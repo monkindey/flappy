@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Flappy Pig</title>
+	<link rel="stylesheet" href="css/flappy.css">
+</head>
+<body>
+	<div id="flappy">
+		<p id="pipeNum">0</p>
+		<div id="pig"></div>
+		<!-- 管道/陷阱 -->
+		<script type="text/template" id="pillar">
+			<div class="trap">
+				<div class="top pillar"></div>			
+				<div class="bottom pillar"></div>
+			</div>
+		</script>
+		<div id="ad">
+			<h2>Flappy Pig</h2>
+			<h4>按<strong>"空格键"</strong>开始</h4>
+		</div>
+		<p id="gameover">GameOver</p>
+	</div>
+</body>
+<script src="js/zepto.min.js" charset="utf-8"></script>
+<script src="js/pillar_v3.js" charset="utf-8"></script>
+<script src="js/pig_v3.js" charset="utf-8"></script>
+<script src="js/flappy.js" charset="utf-8"></script>
+<script>
+	flappy.init();
+	function debug(msg) {
+	    debug.count = debug.count === undefined ? 0 : debug.count + 1;
+	    console.log(msg + "......count.." + debug.count);
+	}
+</script>
+</html>

@@ -1,0 +1,120 @@
+/**
+ * 	@description 背景图
+ */
+#flappy {
+	background: url(../image/bg.jpg);
+	height: 600px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	width: 400px;
+}
+
+#flappy.init{
+	opacity: .5;
+}
+
+/**
+ * 	@description 闯关的数量
+ */
+@-webkit-keyframes pipeNum{
+	from {
+		transform: scale(0.3)
+	}
+	to {
+		transform: scale(1.5)
+	}
+}
+
+.anim {
+	-webkit-animation: pipeNum 2s;
+}
+
+#pipeNum {
+	color: Teal;
+	font: bolder 40px verdana;
+	left: 10px;
+	position: absolute;
+	top: 3px;
+	z-index: 10;
+}
+
+.trap {
+	width: 45px;
+	height: 600px;
+	position: absolute;
+}
+
+.pillar {
+	width: 45px;
+	height: 600px;
+	position: absolute;
+	background-image: url(../image/pillar.png);
+	z-index: 5;
+}
+
+.trap .bottom {
+	background-position: 0 600px;
+}
+
+/**
+ * 	@description 飞扬的猪
+ */
+#pig {
+	background: url(../image/pig.png);
+	left: 30px;
+	top: 260px;
+	position: absolute;
+	height: 30px;
+	width: 35px;
+	z-index: 4;
+}
+
+/**
+ * @description 打广告
+ */
+#ad{
+	margin-top: 250px;
+	text-align: center;
+}
+#ad h2{
+	line-height: 0em;
+}
+
+#ad strong{
+	color: blue;
+}
+/**
+ * 	@description 动态显示GameOver文本
+ */
+@-webkit-keyframes anim{
+	from {
+		transform: scale(0.3)
+	}
+	to {
+		transform: scale(1.5)
+	}
+}
+
+#gameover {
+	/*animation兼容性不好*/
+	-webkit-animation: anim 3s;
+	display: none;
+	font: bolder 24px "Times New Roman";
+	left: 50%;
+	margin-left: -125px;
+	margin-top: -50px;
+	height: 100px;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	width: 250px;
+	z-index: 30;
+}
+/**
+ * 	@description 碰撞后，整个页面半透明、灰色
+ */
+.crash {
+	background: #ccc;
+	opacity: .5;
+}
