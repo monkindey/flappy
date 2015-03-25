@@ -1,6 +1,6 @@
 /**
  * @author monkindey
- * @update 2014-09-21
+ * @update 2014.09.21
  * @description 入口
  */
 var flappy = (function(DOC) {

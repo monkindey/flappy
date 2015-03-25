@@ -8,9 +8,8 @@
  * (3).速率的单位为 px/s
  */
 
-var pig = (function() {
+var pig = (function(DOC) {
 
-	var DOC = document;
 	var _pig = $("#pig");
 	//_pigEl.css("top")返回的是 **px
 	var _pigElTop = parseInt(_pig.css("top"));
@@ -18,7 +17,7 @@ var pig = (function() {
 	var DOWNTIMEGAP = 80;
 	var RISETIMEGAP = 80;
 	// 下降的极限高度
-	var MAXHEIGHT = $("#flappy").height() + $("#pig").height();
+	var MAX_HEIGHT = $("#flappy").height() + $("#pig").height();
 	var DOWN = true;
 	var RISE = false;
 
@@ -49,10 +48,10 @@ var pig = (function() {
 			// 自由落体运动的
 			_pigElTop = _pigElTop + 20;
 			_pig.css("top", _pigElTop);
-			if (_pigElTop < MAXHEIGHT && !RISE) {
+			if (_pigElTop < MAX_HEIGHT && !RISE) {
 				setTimeout(arguments.callee, DOWNTIMEGAP);
 				// debug(_pigElTop);
-			} else if (_pigElTop >= MAXHEIGHT) {
+			} else if (_pigElTop >= MAX_HEIGHT) {
 				pig.DIE = true;
 			}
 		}, DOWNTIMEGAP);
@@ -105,4 +104,4 @@ var pig = (function() {
 		reset: reset
 	}
 
-})()
+})(document)

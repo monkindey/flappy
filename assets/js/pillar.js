@@ -1,16 +1,10 @@
 /**
  * @author monkindey
- * @date {
- *       2014-11-10 60%
- *       2014-11-11 90%
- *       2014-11-12 99%
- *       .....
- * }
+ * @date [2014.11.10(60%), 2014.11.11(90%), 2014.11.12(99%)]
  * @description 管道的生成
- * @difficulty {
- *             1. 管道的生成是无限循环的
- *             2. 检测碰撞
- * }
+ * @difficulty
+ * 1. 管道的生成是无限循环的
+ * 2. 检测碰撞
  */
 
 /**
@@ -23,16 +17,20 @@ function Pillar() {
 	this.$dom = $(this.pillarHtml);
 	this.id = Pillar.id++;
 
+	var initFlappy = function() {
+		$(document).on('keyup', function() {
+			flappy.init();
+		});
+	};
+
 	$(this).on('stop', function() {
 		pig.down();
 		Pillar.STOP = true;
 		// gameover
+		$(document).off('keyup');
 		$('#gameover').show();
 		$('#flappy').addClass('init');
-		$(document).off('keyup');
-		$(document).on('keyup', function() {
-			flappy.init();
-		});
+		setTimeout(initFlappy, 2000);
 	});
 
 	$(this).one('pass', function() {
