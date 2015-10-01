@@ -4,4 +4,4 @@
 
 
 ### 实例
-[javascript Flappy Pig By monkindey](http://monkindey.github.io/flappy/index.html)
+[javascript Flappy Pig By monkindey](http://monkindey.github.io/flappy.bird/index.html)
